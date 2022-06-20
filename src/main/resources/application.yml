@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+grpc:
+  client:
+    #通用服务,不传值或者传不存在
+    GLOBAL:
+      address: 'static://127.0.0.1:9091'
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      negotiationType: plaintext
+
+    #私有服务，可配置多个
+    local-my-service:
+      address: 'static://127.0.0.1:9092'
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      negotiationType: plaintext
