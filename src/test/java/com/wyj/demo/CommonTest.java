@@ -1,12 +1,10 @@
 package com.wyj.demo;
 
 
-import com.example.grpc.TestRequest;
-import com.example.grpc.TestResponse;
-import com.example.grpc.TestServiceGrpc;
+import com.wyj.demo.entity.MyPo;
+import com.wyj.demo.entity.MyPo1;
 import com.wyj.demo.service.MyGrpcService;
 import lombok.extern.slf4j.Slf4j;
-import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,5 +49,9 @@ public class CommonTest {
 
         }
         log.info("myTest");
+        MyPo myPo = new MyPo().setName("1");
+        System.out.println(myPo.toString());
+        MyPo1 myPo1 = new MyPo1().setName("1");
+        System.out.println(myPo1.toString());
     }
 }
