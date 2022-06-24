@@ -29,12 +29,13 @@ public class ShiroConfig {
 //            authc：必须认证才可以访问
 //            user：必须拥有记住我功能才可以访问
 //            perms：拥有对某个资源的权限才能访问
-        Map<String, String> filterMap = new LinkedHashMap<>();
+        Map<String, String> definitionFilterMap = new LinkedHashMap<>();
 //        匿名访问
-        filterMap.put("/login", "anon");
-        filterMap.put("/loginOut", "anon");
-        filterMap.put("/**", "authc");
-        factoryBean.setFilterChainDefinitionMap(filterMap);
+        definitionFilterMap.put("/login", "anon");
+        definitionFilterMap.put("/loginOut", "anon");
+        //definitionFilterMap.put("/listen", "anon");
+        definitionFilterMap.put("/**", "authc");
+        factoryBean.setFilterChainDefinitionMap(definitionFilterMap);
         return factoryBean;
     }
 

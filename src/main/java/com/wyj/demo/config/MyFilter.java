@@ -2,8 +2,7 @@ package com.wyj.demo.config;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
-import org.json.JSONException;
+import org.apache.shiro.web.filter.AccessControlFilter;
 import org.json.JSONObject;
 
 import javax.servlet.ServletOutputStream;
@@ -15,18 +14,19 @@ import java.util.Objects;
 
 @Slf4j
 @AllArgsConstructor
-public class MyFilter extends FormAuthenticationFilter {
+public class MyFilter extends AccessControlFilter {
+
 
     @Override
-    protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
-        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+    protected boolean isAccessAllowed(ServletRequest servletRequest, ServletResponse servletResponse, Object o) throws Exception {
+        HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         String sid = httpServletRequest.getHeader("sid");
         return Objects.equals(sid, "wyj");
     }
 
     //返回false执行下面逻辑
     @Override
-    protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws JSONException {
+    protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
         JSONObject o = new JSONObject();
         o.put("error", "未认证");
         response.setContentType("application/json; charset=utf-8");
