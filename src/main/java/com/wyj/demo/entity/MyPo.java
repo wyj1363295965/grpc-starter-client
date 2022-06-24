@@ -2,17 +2,17 @@ package com.wyj.demo.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
-@Accessors(chain = true)
+
 @Getter
 @Setter
-@ToString
+@Accessors(chain = true)
 public class MyPo implements Serializable {
 
+    private static final long serialVersionUID = 7440519756790235410L;
     private String name;
 
 }

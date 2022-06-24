@@ -9,8 +9,10 @@ import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.MessageSource;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 @SpringBootTest
@@ -19,6 +21,21 @@ public class CommonTest {
 
     @Autowired
     private MyGrpcService myGrpcService;
+    @Autowired
+    private MessageSource messageSource;
+
+    @Test
+    public void test3() {
+
+        String[] langCountry = Locale.SIMPLIFIED_CHINESE.toString().split("_");
+        Locale locale = new Locale(langCountry[0], langCountry[1]);
+        try {
+            String result = messageSource.getMessage("CLIENT_RESPONSE.NO_MAP_SPECIFIED", null, locale);
+            log.info(result);
+        } catch (Exception e) {
+            log.error("Get i18n value occurs ex: {}", e.getMessage(), e);
+        }
+    }
 
     @Test
     public void test2() {
