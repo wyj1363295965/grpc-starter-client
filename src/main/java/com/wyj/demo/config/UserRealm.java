@@ -34,10 +34,9 @@ public class UserRealm extends AuthorizingRealm {
         //Account account = accountController.selectByName(username);
 
 //         密码认证 shiro做 存在泄密
-        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(username,
+        return new SimpleAuthenticationInfo(username,
                 token.getCredentials(),
                 this.getName());
-        return info;
     }
 
 }

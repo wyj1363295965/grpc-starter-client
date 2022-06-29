@@ -52,8 +52,7 @@ public class ShiroConfig {
     //    创建UserRealm类 需要自定义 1
     @Bean
     public UserRealm userRealm() {
-        UserRealm userRealm = new UserRealm();
-        return userRealm;
+        return new UserRealm();
     }
 
 }

@@ -27,7 +27,7 @@ public class MyFilterTest extends FormAuthenticationFilter {
 
     //返回false执行下面逻辑
     @Override
-    protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
+    protected boolean onAccessDenied(ServletRequest request, ServletResponse response) {
         JSONObject o = new JSONObject();
         o.put("error", "未认证");
         response.setContentType("application/json; charset=utf-8");
