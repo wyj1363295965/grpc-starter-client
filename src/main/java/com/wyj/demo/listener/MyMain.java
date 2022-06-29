@@ -15,6 +15,14 @@ public class MyMain {
 
         Double d = 0.25;
         System.out.println(d.intValue() + "");
+        System.out.println(String.format("%.2f", d));
+
+
+        Double test = null;
+        //double dustPushPowerUsageKwh1 = Double.parseDouble(null);
+        double dustPushPowerUsageKwh2 = 0.00;
+
+        System.out.println(2.0 / dustPushPowerUsageKwh2);
 
         List<String> scrubberBattery = new ArrayList<>(); // 洗地耗电量
         double a = Double.parseDouble("0") + 6.7 / 36;

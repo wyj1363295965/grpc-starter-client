@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.MessageSource;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -23,6 +24,20 @@ public class CommonTest {
     private MyGrpcService myGrpcService;
     @Autowired
     private MessageSource messageSource;
+    List<String> list;
+
+
+    @Test
+    public void test4() {
+        BigDecimal one = new BigDecimal(0);
+        BigDecimal two = null;
+        //System.out.println(one.add(two));
+        list = Lists.newArrayList("1");
+        for (String tmp : list) {
+            tmp += "+";
+        }
+        System.out.println(list);
+    }
 
     @Test
     public void test3() {
