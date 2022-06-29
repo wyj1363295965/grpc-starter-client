@@ -1,9 +1,9 @@
 package com.wyj.demo.config;
 
+import com.alibaba.fastjson.JSONObject;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.web.filter.AccessControlFilter;
-import org.json.JSONObject;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.ServletRequest;
