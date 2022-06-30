@@ -1,6 +1,8 @@
 package com.wyj.demo;
 
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.wyj.demo.entity.MyPo;
 import com.wyj.demo.entity.MyPo1;
 import com.wyj.demo.service.MyGrpcService;
@@ -36,6 +38,12 @@ public class CommonTest {
         for (String tmp : list) {
             tmp += "+";
         }
+        JSONArray array = new JSONArray();
+        array.add("");
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("1", 2);
+        array.add(jsonObject);
+        System.out.println(array);
         System.out.println(list);
     }
 

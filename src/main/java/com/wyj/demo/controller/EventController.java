@@ -3,8 +3,10 @@ package com.wyj.demo.controller;
 import com.wyj.demo.entity.MyPo;
 import com.wyj.demo.entity.base.AppResponse;
 import com.wyj.demo.event.MyEvent;
+import com.wyj.demo.service.MyGrpcService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,8 +22,13 @@ import javax.validation.constraints.NotNull;
 @Validated
 public class EventController {
 
-
+    private final MyGrpcService myGrpcService;
     private final ApplicationEventPublisher publisher;
+
+    @RequestMapping(value = "/grpcTest", method = RequestMethod.GET)
+    public void grpcTest() {
+        myGrpcService.test2();
+    }
 
     @RequestMapping(value = "/listen", method = RequestMethod.GET)
     public void listenDemo() {
