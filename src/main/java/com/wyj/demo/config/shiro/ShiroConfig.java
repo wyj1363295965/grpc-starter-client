@@ -1,4 +1,4 @@
-package com.wyj.demo.config;
+package com.wyj.demo.config.shiro;
 
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -34,7 +34,7 @@ public class ShiroConfig {
         definitionFilterMap.put("/login", "anon");
         definitionFilterMap.put("/loginOut", "anon");
         //definitionFilterMap.put("/listen", "anon");
-        definitionFilterMap.put("/**", "authc");
+        //definitionFilterMap.put("/**", "authc");
         factoryBean.setFilterChainDefinitionMap(definitionFilterMap);
         return factoryBean;
     }

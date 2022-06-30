@@ -1,4 +1,4 @@
-package com.wyj.demo.config;
+package com.wyj.demo.config.shiro;
 
 import com.google.common.collect.Lists;
 import org.apache.shiro.authc.*;

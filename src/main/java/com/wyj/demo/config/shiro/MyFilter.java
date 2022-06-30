@@ -1,4 +1,4 @@
-package com.wyj.demo.config;
+package com.wyj.demo.config.shiro;
 
 import com.alibaba.fastjson.JSONObject;
 import lombok.AllArgsConstructor;
