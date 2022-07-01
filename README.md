@@ -8,6 +8,9 @@
 - shiro权限控制
 - 全局异常处理
 - 参数校验
+- mybatis-plus
+- mybatis-plus-generator
+- swagger
 
 ### @Validated使用
 注解位置：post请求在参数前，加上@RequestBody；get请求放在controller

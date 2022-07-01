@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyj.demo.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wyj.demo.entity.User">
+        <id column="USER_ID" property="userId" />
+        <result column="ORG_ID" property="orgId" />
+        <result column="ACCOUNT" property="account" />
+        <result column="USERNAME" property="username" />
+        <result column="PASSWORD" property="password" />
+        <result column="AVATAR" property="avatar" />
+        <result column="ROLE_ID" property="roleId" />
+        <result column="EMAIL" property="email" />
+        <result column="TEL_NUM" property="telNum" />
+        <result column="LEADER_ID" property="leaderId" />
+        <result column="REGISTER_TIME" property="registerTime" />
+        <result column="LAST_ONLINE" property="lastOnline" />
+        <result column="DELETED" property="deleted" />
+        <result column="LOCKED" property="locked" />
+        <result column="EFFECT_TIME" property="effectTime" />
+        <result column="FAILURE_TIME" property="failureTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        USER_ID, ORG_ID, `ACCOUNT`, USERNAME, `PASSWORD`, AVATAR, ROLE_ID, EMAIL, TEL_NUM, LEADER_ID, REGISTER_TIME, LAST_ONLINE, DELETED, `LOCKED`, EFFECT_TIME, FAILURE_TIME
+    </sql>
+
+</mapper>

@@ -22,6 +22,32 @@ spring:
     encoding: UTF-8
     basename: static/messages
 
+  datasource:
+    # when deployed with docker, the mysql server name should be the database module name
+    url: jdbc:mysql://121.37.225.158:23306/ally_fleet?characterEncoding=UTF-8&useSSL=false&useUnicode=true&autoReconnect=true&allowMultiQueries=true&allowPublicKeyRetrieval=true
+    username: root
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # database connector pool parameters
+    # type: org.apache.commons.dbcp2.BasicDataSource
+    dbcp2:
+      username: root
+      # username and password
+      password: admin
+      # database driver
+      driver-class-name: com.mysql.jdbc.Driver
+      # the initialized size of connectors
+      initial-size: 1
+      # the max size of connectors
+      max-total: 20
+      # the min size of spare connectors
+      min-idle: 1
+      # the max size of spare connectors
+      max-idle: 20
+      # the max milli-secs of waitting
+      max-wait-millis: 6000
+      validation-query: SELECT 1
+
   task:
     execution:
       thread-name-prefix: wyj-
@@ -30,3 +56,11 @@ spring:
         max-size: 100
         queue-capacity: 100
         keep-alive: 60s
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

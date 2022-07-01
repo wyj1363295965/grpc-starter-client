@@ -1,5 +1,6 @@
-package com.wyj.demo.listener;
+package com.wyj.demo;
 
+import org.apache.commons.lang3.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,9 @@ public class MyMain {
 //            o.wait(5 * 1000L);
 //        }
 //        System.out.println(o);
+
+        System.out.println(StringUtils.isEmpty(" "));
+        System.out.println(StringUtils.isBlank(" "));//可以判断空字符串
 
         Double d = 0.25;
         System.out.println(d.intValue() + "");
