@@ -22,34 +22,34 @@ public class ShiroConfig {
         filterMap.put("authc", new MyFilter());
         factoryBean.setFilters(filterMap);
 
-//        设置安全管理器
+        //设置安全管理器
         factoryBean.setSecurityManager(securityManager);
-//            添加Shiro内置过滤器
-//            anon：无需认证就可以访问
-//            authc：必须认证才可以访问
-//            user：必须拥有记住我功能才可以访问
-//            perms：拥有对某个资源的权限才能访问
+//        添加Shiro内置过滤器
+//        anon：无需认证就可以访问
+//        authc：必须认证才可以访问
+//        user：必须拥有记住我功能才可以访问
+//        perms：拥有对某个资源的权限才能访问
         Map<String, String> definitionFilterMap = new LinkedHashMap<>();
 //        匿名访问
-        definitionFilterMap.put("/login", "anon");
+        definitionFilterMap.put("/user/login", "anon");
         definitionFilterMap.put("/loginOut", "anon");
         //definitionFilterMap.put("/listen", "anon");
-        //definitionFilterMap.put("/**", "authc");
+        definitionFilterMap.put("/**", "authc");
         factoryBean.setFilterChainDefinitionMap(definitionFilterMap);
         return factoryBean;
     }
 
-    //  DefaultWebSecurityManager 2 安全管理器
+    //DefaultWebSecurityManager 2 安全管理器
     @Bean(name = "securityManager")
     public DefaultWebSecurityManager getDefaultWebSecurityManager(
             @Qualifier("userRealm") UserRealm userRealm) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-//        关联UserRealm
+        //关联UserRealm
         securityManager.setRealm(userRealm);
         return securityManager;
     }
 
-    //    创建UserRealm类 需要自定义 1
+    //创建UserRealm类 需要自定义 1
     @Bean
     public UserRealm userRealm() {
         return new UserRealm();

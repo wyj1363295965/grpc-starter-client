@@ -41,7 +41,8 @@ public class Generator {
                     builder.author(userName)
                             // 覆盖已生成文件
                             .fileOverride()
-                            .enableSwagger()
+                            //开启swagger
+                            //.enableSwagger()
                             //执行完毕后禁止打开目录
                             .disableOpenDir()
                             // 指定输出目录
@@ -58,7 +59,7 @@ public class Generator {
                 })
                 //策略设置
                 .strategyConfig(builder ->
-                        //数据库表
+                        //数据库表,可设置多个
                         builder.addInclude("tb_user")
                                 // 设置过滤表前缀
                                 .addTablePrefix("tb_", "c_")
