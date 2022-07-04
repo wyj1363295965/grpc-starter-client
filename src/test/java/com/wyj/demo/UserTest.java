@@ -6,7 +6,7 @@ import com.wyj.demo.entity.User;
 import com.wyj.demo.mapper.UserMapper;
 import com.wyj.demo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -38,7 +38,7 @@ public class UserTest {
     }
 
     @Test
-    void test2() {
+    public void test2() {
         //查询名字为五毛
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.eq("name", "派大星");
@@ -47,7 +47,7 @@ public class UserTest {
     }
 
     @Test
-    void test3() {
+    public void test3() {
         //查询年龄在16-30岁之间的用户
         QueryWrapper<User> wrapper = new QueryWrapper<>();
 
@@ -58,7 +58,7 @@ public class UserTest {
 
     //模糊查询
     @Test
-    void test4() {
+    public void test4() {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         //左和右  是指通配符在左边还是右边 t%
         wrapper.notLike("name", "l")
@@ -68,7 +68,7 @@ public class UserTest {
     }
 
     @Test
-    void test5() {
+    public void test5() {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         // id 在子查询中查出来
         wrapper.inSql("id", "select id from user where id<3");
@@ -79,7 +79,7 @@ public class UserTest {
 
     //排序
     @Test
-    void test6() {
+    public void test6() {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
 
         wrapper.orderByDesc("id");

@@ -22,6 +22,10 @@ spring:
     encoding: UTF-8
     basename: static/messages
 
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ant_path_matcher
+
   datasource:
     # when deployed with docker, the mysql server name should be the database module name
     url: jdbc:mysql://121.37.225.158:23306/ally_fleet?characterEncoding=UTF-8&useSSL=false&useUnicode=true&autoReconnect=true&allowMultiQueries=true&allowPublicKeyRetrieval=true
@@ -62,5 +66,5 @@ mybatis-plus:
     db-config:
       logic-delete-value: 1
       logic-not-delete-value: 0
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

@@ -1,6 +1,7 @@
 package com.wyj.demo.config.shiro;
 
 import com.alibaba.fastjson.JSONObject;
+import com.wyj.demo.entity.constants.SecurityConstants;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.web.filter.AccessControlFilter;
@@ -20,7 +21,7 @@ public class MyFilter extends AccessControlFilter {
     @Override
     protected boolean isAccessAllowed(ServletRequest servletRequest, ServletResponse servletResponse, Object o) {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
-        String sid = httpServletRequest.getHeader("sid");
+        String sid = httpServletRequest.getHeader(SecurityConstants.TOKEN_HEADER);
         return Objects.equals(sid, "wyj");
     }
 

@@ -17,8 +17,8 @@ public class MyEvent extends ApplicationEvent {
         super(source);
     }
 
-    public MyEvent(Object source, Clock clock, MyPo myPo) {
-        super(source, clock);
+    public MyEvent(Object source, MyPo myPo) {
+        super(source);
         this.myPo = myPo;
     }
 }

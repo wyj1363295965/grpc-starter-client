@@ -4,6 +4,7 @@ import com.wyj.demo.entity.MyPo;
 import com.wyj.demo.entity.base.AppResponse;
 import com.wyj.demo.event.MyEvent;
 import com.wyj.demo.service.MyGrpcService;
+import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import javax.validation.constraints.NotNull;
 @RequiredArgsConstructor
 @Slf4j
 @Validated
+@Api(value = "事件接口", tags = {"1"})
 public class EventController {
 
     private final MyGrpcService myGrpcService;

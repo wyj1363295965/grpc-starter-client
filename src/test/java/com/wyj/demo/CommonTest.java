@@ -8,7 +8,7 @@ import com.wyj.demo.entity.MyPo1;
 import com.wyj.demo.service.MyGrpcService;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.util.Lists;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.MessageSource;

@@ -33,6 +33,15 @@ public class ShiroConfig {
 //        匿名访问
         definitionFilterMap.put("/user/login", "anon");
         definitionFilterMap.put("/loginOut", "anon");
+        definitionFilterMap.put("/loginOut", "anon");
+        definitionFilterMap.put("/loginOut", "anon");
+        // 放行Swagger相关访问
+        definitionFilterMap.put("/docs", "anon");
+        definitionFilterMap.put("/swagger-ui.html", "anon");
+        definitionFilterMap.put("/webjars/springfox-swagger-ui/**", "anon");
+        definitionFilterMap.put("/swagger-resources/**", "anon");
+        definitionFilterMap.put("/v2/api-docs", "anon");
+
         //definitionFilterMap.put("/listen", "anon");
         definitionFilterMap.put("/**", "authc");
         factoryBean.setFilterChainDefinitionMap(definitionFilterMap);
